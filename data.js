@@ -10,7 +10,7 @@ window.WEDDING_DATA = {
   config: {
     title: "Manasvi & Saumya Wedding Invitation",
     coupleInitials: "M & S",
-    logoImage: "assets/logo.png",
+    logoImage: "assets/logo2.png",
     photos: [
       "assets/couple1.jpeg",
       "assets/couple2.jpeg",
@@ -83,9 +83,9 @@ window.WEDDING_DATA = {
       },
       groom: {
         name: "Saumya",
-        fullName: "Abhishek Rajesh Faria",
-        parents: "Son of Mrs. Rakshaben & Mr. Rajesh Damji Faria",
-        grandparents: "Grandson of Late Mrs. Amrutben & Mr. Damji Ugmashi Faria",
+        fullName: "Saumya Hansraj Shah",
+        parents: "Son of Mrs. Amitaben & Mr. Hansraj Nanji Shah",
+        grandparents: "Grandson of Late Mrs. Amratben & Mr. Nanji Shah",
         village: "Village Adhoi"
       }
     },
