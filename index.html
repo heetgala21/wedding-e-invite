@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="gu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title id="pageTitle"></title>
+
+  <!-- Preload Fonts and Core Assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Anek+Gujarati:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Noto+Serif+Gujarati:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Rasa:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Shrikhand&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Animated Gradient Blobs -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Falling Rose Petals Container -->
+  <div class="petals-container" id="petalsContainer" aria-hidden="true"></div>
+
+  <!-- Background Audio Element (Source & Time Loaded from data.js) -->
+  <audio id="weddingAudio" loop preload="auto" playsinline></audio>
+
+  <!-- 1. Gate Screen / Tap to Open Invitation -->
+  <div class="gate-screen" id="gateScreen">
+    <div class="gate-card" id="gateCard">
+      <div class="gate-logo-wrapper">
+        <img src="" alt="Couple Monogram" class="gate-logo" id="gateLogo">
+      </div>
+      <h1 class="gate-names" id="gateCoupleNames"></h1>
+      <p class="gate-type" id="gateInviteType"></p>
+      <button class="gate-enter-btn" id="gateEnterBtn">
+        <span id="gateEnterText"></span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. Fixed Top Controls (Music & Language) -->
+  <header class="top-controls" id="topControls">
+    <!-- Audio Play/Pause Button (revealed after tap to open) -->
+    <button class="control-btn music-btn" id="musicToggleBtn" aria-label="Toggle Background Music"
+      style="display: none;">
+      <div class="sound-bars" id="soundBars">
+        <span class="sound-bar"></span>
+        <span class="sound-bar"></span>
+        <span class="sound-bar"></span>
+        <span class="sound-bar"></span>
+      </div>
+    </button>
+
+    <!-- Floating Top Language Switcher Pill (Populated from data.js) -->
+    <div class="lang-switch-pill top-lang-switch" id="topLangSwitch" role="group" aria-label="Language Selector"></div>
+  </header>
+
+  <!-- 3. Fixed Slide Progress Indicator -->
+  <nav class="slide-indicator" id="slideIndicator" aria-hidden="true" style="display: none;">
+    <div class="slide-dot active" data-index="0"></div>
+    <div class="slide-dot" data-index="1"></div>
+    <div class="slide-dot" data-index="2"></div>
+    <div class="slide-dot" data-index="3"></div>
+    <div class="slide-dot" data-index="4"></div>
+    <div class="slide-dot" data-index="5"></div>
+  </nav>
+
+  <!-- 4. Floating Theme Palette Switcher -->
+  <div class="theme-picker-container" id="themePickerContainer" style="display: none;">
+    <button class="theme-palette-btn" id="themePaletteBtn" aria-label="Toggle Color Theme Palette"
+      title="Choose Color Theme">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path
+          d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61.42.53.33 1.3-.2 1.73-.53.42-1.3.33-1.73-.2C1.46 17.26.6 14.74.6 12 .6 5.7 5.7.6 12 .6s11.4 5.1 11.4 11.4c0 3.03-1.12 5.8-2.98 7.89-.47.53-1.28.57-1.8.1-.53-.47-.57-1.28-.1-1.8 1.49-1.68 2.38-3.89 2.38-6.19 0-4.97-4.03-9-9-9zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9s1.5.67 1.5 1.5S7.33 12 6.5 12zm4-4c-.83 0-1.5-.67-1.5-1.5S9.67 5 10.5 5s1.5.67 1.5 1.5S11.33 8 10.5 8zm4 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3.5 4c-.83 0-1.5-.67-1.5-1.5S17.17 9 18 9s1.5.67 1.5 1.5S18.83 12 18 12z" />
+      </svg>
+    </button>
+    <div class="theme-picker-menu" id="themePickerMenu">
+      <button type="button" class="theme-swatch" data-theme="rosegold" title="Rose Gold & Champagne"
+        style="background: linear-gradient(135deg, #b76e79, #e6c998);"></button>
+      <button type="button" class="theme-swatch" data-theme="royal-gold" title="Regal 24K Heritage Gold"
+        style="background: linear-gradient(135deg, #b8860b, #e5b95a);"></button>
+      <button type="button" class="theme-swatch" data-theme="burgundy" title="Velvet Burgundy & Maroon"
+        style="background: linear-gradient(135deg, #852236, #c59b27);"></button>
+      <button type="button" class="theme-swatch" data-theme="emerald" title="Imperial Emerald & Mint"
+        style="background: linear-gradient(135deg, #2d6a4f, #d4af37);"></button>
+      <button type="button" class="theme-swatch" data-theme="sapphire" title="Midnight Sapphire & Gold"
+        style="background: linear-gradient(135deg, #1e3d59, #f5d061);"></button>
+    </div>
+  </div>
+
+  <!-- 5. Floating WhatsApp RSVP Button -->
+  <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-rsvp" id="whatsappRsvpBtn"
+    style="display: none;">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.884 2.791.884 3.179 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.77zm3.393 8.232c-.144.405-.837.774-1.17.824-.312.045-.634.053-.984-.047-.369-.105-.875-.276-1.551-.572-1.282-.56-2.124-1.854-2.188-1.94-.064-.085-.519-.692-.519-1.321 0-.629.329-.938.446-1.066.117-.128.256-.16.341-.16.085 0 .17.001.245.006.079.004.185-.03.29.222.106.256.362.883.394.947.032.064.053.139.011.224-.043.085-.064.139-.128.213-.064.075-.134.167-.192.224-.064.064-.131.134-.056.264.075.128.332.548.712.886.49.435.902.57 1.03.634.128.064.202.053.277-.032.075-.085.32-.373.405-.501.085-.128.17-.107.288-.064.117.043.746.352.874.416.128.064.213.096.245.149.032.053.032.31-.112.715zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.954-1.399C8.389 21.493 10.133 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+    </svg>
+    <span id="whatsappRsvpText"></span>
+  </a>
+
+  <!-- 5. Main Fullscreen Snap Container -->
+  <main class="main-container no-scrollbar" id="mainContainer">
+
+    <!-- CARD 1: Hero & Save the Date -->
+    <section class="card-section" id="section-0" data-index="0">
+      <div class="card-content">
+        <div class="spiritual-mantra" id="heroInvocations"></div>
+        <div class="hero-logo-box">
+          <img src="" alt="Logo" class="hero-logo" id="heroLogo">
+        </div>
+        <h1 class="couple-names" id="heroCoupleNames"></h1>
+        <div class="save-date-badge">
+          <div class="gregorian-date" id="heroDate"></div>
+          <div class="hindu-tithi" id="heroHinduDate"></div>
+        </div>
+
+        <div class="quote-box" id="heroQuote"></div>
+        <div class="swipe-hint">
+          <span id="heroSwipeHint"></span>
+          <svg viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD 2: Couple Lineage & Photo Carousel -->
+    <section class="card-section" id="section-1" data-index="1">
+      <div class="card-content">
+        <!-- Bride Details -->
+        <div class="family-box">
+          <h2 class="person-title" id="brideName"></h2>
+          <p class="person-village" id="brideVillage"></p>
+          <p class="person-desc" id="brideParents"></p>
+          <p class="person-subdesc" id="brideGrandparents"></p>
+        </div>
+
+        <!-- Photo Carousel -->
+        <div class="carousel-wrapper" id="photoCarousel">
+          <div class="carousel-nav-dots" id="carouselDots"></div>
+        </div>
+
+        <!-- Groom Details -->
+        <div class="family-box">
+          <h2 class="person-title" id="groomName"></h2>
+          <p class="person-village" id="groomVillage"></p>
+          <p class="person-desc" id="groomParents"></p>
+          <p class="person-subdesc" id="groomGrandparents"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD 3: Wedding Schedule & Ceremonies -->
+    <section class="card-section" id="section-2" data-index="2">
+      <div class="card-content">
+        <h2 class="section-heading" id="scheduleHeading"></h2>
+        <div class="timeline-list" id="timelineList"></div>
+      </div>
+    </section>
+
+    <!-- CARD 4: Darshanabhilashi (Welcoming Family) -->
+    <section class="card-section" id="section-3" data-index="3">
+      <div class="card-content">
+        <h2 class="section-heading" id="darshanHeading"></h2>
+        <div class="members-grid" id="darshanMembersList"></div>
+      </div>
+    </section>
+
+    <!-- CARD 5: Well-Wishers, Mameru & Ancestors -->
+    <section class="card-section" id="section-4" data-index="4">
+      <div class="card-content">
+        <!-- Well Wishers -->
+        <h3 class="sub-section-title" id="wellWishersTitle"></h3>
+        <p class="names-cloud" id="wellWishersList"></p>
+
+        <div class="divider-line"></div>
+
+        <!-- Mameru -->
+        <h3 class="sub-section-title" id="mameruTitle"></h3>
+        <p class="mameru-village" id="mameruVillage"></p>
+        <p class="mameru-grandparents" id="mameruGrandparents"></p>
+        <div class="uncles-list" id="mameruUncles"></div>
+        <p class="cousins-list" id="mameruCousins"></p>
+
+        <div class="divider-line"></div>
+
+        <!-- Divine Blessings (Divya Ashish) -->
+        <h3 class="sub-section-title" id="divineTitle"></h3>
+        <p class="names-cloud" id="divineList"></p>
+      </div>
+    </section>
+
+    <!-- CARD 6: Venue, Google Map & Closing -->
+    <section class="card-section" id="section-5" data-index="5">
+      <div class="card-content">
+        <div class="venue-box">
+          <h2 class="section-heading" id="venueTitle" style="margin-bottom: 0.5rem; border: none; padding: 0;"></h2>
+          <h3 class="venue-name" id="venueName"></h3>
+          <p class="venue-address" id="venueAddress"></p>
+          <p class="venue-phone" id="venuePhone"></p>
+        </div>
+
+        <div class="map-wrapper">
+          <iframe id="mapFrame" src="" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <a href="#" target="_blank" rel="noopener noreferrer" class="direction-btn" id="directMapBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+          </svg>
+          <span id="directionBtnText"></span>
+        </a>
+
+        <div class="closing-script" id="closingScript"></div>
+        <p class="closing-subtext" id="closingSubtext"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Load Data and Core Engine -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
