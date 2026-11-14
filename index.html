@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" href="assets/logo.png">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.3">
 </head>
 
 <body>
@@ -127,6 +127,29 @@
           <div class="hindu-tithi" id="heroHinduDate"></div>
         </div>
 
+        <!-- Live Wedding Countdown Timer (Populated from data.js) -->
+        <div class="countdown-container" id="countdownContainer">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cdDays">00</span>
+            <span class="countdown-label" id="cdDaysLabel"></span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cdHours">00</span>
+            <span class="countdown-label" id="cdHoursLabel"></span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cdMinutes">00</span>
+            <span class="countdown-label" id="cdMinutesLabel"></span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cdSeconds">00</span>
+            <span class="countdown-label" id="cdSecondsLabel"></span>
+          </div>
+        </div>
+
         <div class="quote-box" id="heroQuote"></div>
         <div class="swipe-hint">
           <span id="heroSwipeHint"></span>
@@ -140,12 +163,12 @@
     <!-- CARD 2: Couple Lineage & Photo Carousel -->
     <section class="card-section" id="section-1" data-index="1">
       <div class="card-content">
-        <!-- Bride Details -->
+        <!-- Groom Details (Saumya) -->
         <div class="family-box">
-          <h2 class="person-title" id="brideName"></h2>
-          <p class="person-village" id="brideVillage"></p>
-          <p class="person-desc" id="brideParents"></p>
-          <p class="person-subdesc" id="brideGrandparents"></p>
+          <h2 class="person-title" id="groomName"></h2>
+          <p class="person-village" id="groomVillage"></p>
+          <p class="person-desc" id="groomParents"></p>
+          <p class="person-subdesc" id="groomGrandparents"></p>
         </div>
 
         <!-- Photo Carousel -->
@@ -153,12 +176,12 @@
           <div class="carousel-nav-dots" id="carouselDots"></div>
         </div>
 
-        <!-- Groom Details -->
+        <!-- Bride Details (Manasvi) -->
         <div class="family-box">
-          <h2 class="person-title" id="groomName"></h2>
-          <p class="person-village" id="groomVillage"></p>
-          <p class="person-desc" id="groomParents"></p>
-          <p class="person-subdesc" id="groomGrandparents"></p>
+          <h2 class="person-title" id="brideName"></h2>
+          <p class="person-village" id="brideVillage"></p>
+          <p class="person-desc" id="brideParents"></p>
+          <p class="person-subdesc" id="brideGrandparents"></p>
         </div>
       </div>
     </section>
@@ -233,8 +256,8 @@
   </main>
 
   <!-- Load Data and Core Engine -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=2.3"></script>
+  <script src="app.js?v=2.3"></script>
 </body>
 
 </html>

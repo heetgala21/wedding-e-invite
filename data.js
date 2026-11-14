@@ -8,13 +8,16 @@
 window.WEDDING_DATA = {
   // General Configuration & Assets
   config: {
-    title: "Manasvi & Saumya Wedding Invitation",
-    coupleInitials: "M & S",
+    title: "Saumya & Manasvi Wedding Invitation",
+    coupleInitials: "S & M",
+    assetVersion: "2.3",
     logoImage: "assets/logo2.png",
     photos: [
       "assets/couple1.jpeg",
       "assets/couple2.jpeg",
-      "assets/couple3.jpeg"
+      "assets/couple3.jpeg",
+      "assets/couple4.jpeg",
+      "assets/couple5.jpeg",
     ],
     // Audio Configuration
     // Recommended songs:
@@ -36,7 +39,7 @@ window.WEDDING_DATA = {
     },
     // Google Maps Navigation
     venueMap: {
-      embedUrl: "https://www.google.com/maps/dir//CCDN+Banquet+Hall,+Andheri+Link+Rd,+near+lotus+petrol+pump,+Adarsh+Nagar,+Andheri+West,+Mumbai,+Maharashtra+400102/@19.152896,72.8662016,29788m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3be7b7fd447d543b:0x7fc101dabcdeaad4!2m2!1d72.8312297!2d19.1441999?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D",
+      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.166222551513!2d72.82865477520679!3d19.144199882074513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7fd447d543b%3A0x7fc101dabcdeaad4!2sCCDN%20Banquet%20Hall!5e0!3m2!1sen!2sin!4v1794638856099!5m2!1sen!2sin",
       directMapUrl: "https://maps.app.goo.gl/KzcM7KkaYPo5qbXn6"
     },
     defaultLanguage: "gu", // "gu" for Gujarati, "en" for English
@@ -48,6 +51,10 @@ window.WEDDING_DATA = {
     // - "emerald"    (Imperial Emerald Sage & Palace Mint)
     // - "sapphire"   (Midnight Royal Sapphire & Gold)
     theme: "royal-gold",
+    // Live Countdown Target Date ("Saturday, 05.12.2026", 4:15 PM)
+    countdown: {
+      targetDate: "2026-12-05T16:15:00+05:30"
+    },
     // Available UI languages
     languages: [
       { code: "gu", label: "ગુજરાતી" },
@@ -65,28 +72,38 @@ window.WEDDING_DATA = {
     rsvpBtnText: "RSVP",
     directionBtnText: "Open in Google Maps",
 
+    // Countdown Labels
+    countdownLabels: {
+      days: "Days",
+      hours: "Hours",
+      minutes: "Mins",
+      seconds: "Secs"
+    },
+
     spiritualInvocations: [
-      "|| Shree Ganeshaya Namah ||",
-      "|| Shree Mahaviraya Namah ||",
+      "॥ Shree Ganeshaya Namah ॥",
+      "॥ Shree Khetarpar Dadane Namah ॥",
+      "॥ Shree Sancha Matane Namah ॥",
     ],
 
     inspirationalQuote: "May the courtyard bloom with auspicious melodies and the family glow with joy, as two hearts take their first steps together on a shared journey. O Lord, shower Your grace upon this sacred bond, and may their life together always be filled with love, understanding, values, and happiness.",
 
     couple: {
-      bride: {
-        name: "Manasvi",
-        fullName: "Manasvi Abhay Parekh",
-        parents: "Daughter of Mrs. Alpaben & Mr. Abhaybhai Chandrakant Parekh",
-        grandparents: "Granddaughter of Late Mrs. Hasumatiben & Mr. Chandrakant Keshavlal Parekh",
-        village: "Village Manfara"
-      },
       groom: {
         name: "Saumya",
         fullName: "Saumya Hansraj Shah",
         parents: "Son of Mrs. Amitaben & Mr. Hansrajbhai Nanji Shah",
         grandparents: "Grandson of Late Mrs. Amrutben & Mr. Nanjibhai Manshi Shah",
         village: "Village Adhoi"
-      }
+      },
+      bride: {
+        name: "Manasvi",
+        fullName: "Manasvi Abhay Parekh",
+        parents: "Daughter of Mrs. Alpaben & Mr. Abhaybhai Chandrakant Parekh",
+        grandparents: "Granddaughter of Late Mrs. Hasumatiben & Mr. Chandrakant Keshavlal Parekh",
+        village: "Village Morbi"
+      },
+
     },
 
     eventDetails: {
@@ -182,27 +199,38 @@ window.WEDDING_DATA = {
     rsvpBtnText: "હાજરીની પુષ્ટિ",
     directionBtnText: "Google Maps માં ખોલો",
 
+    // Countdown Labels
+    countdownLabels: {
+      days: "દિવસ",
+      hours: "કલાક",
+      minutes: "મિનિટ",
+      seconds: "સેકન્ડ"
+    },
+
     spiritualInvocations: [
       "॥ શ્રી ગણેશાય નમઃ ॥",
-      "॥ શ્રી મહાવીરાય નમઃ ॥",
+      "॥ શ્રી ખેતરપાર દાદાને નમઃ ॥",
+      "॥ શ્રી સંચા માતાને નમઃ ॥",
+
     ],
 
     inspirationalQuote: "મંગલ સ્વરોથી મહેકે આંગણું, હર્ષથી ઝળહળે પરિવાર, બે હૈયાં આજે સાથે માંડે જીવનના સહિયારા ડગ. હે પ્રભુ, એમના આ પાવન સંબંધ પર તારી કૃપા વરસાવજે, પ્રેમ, સમજણ અને સંસ્કારથી એમનો સંસાર સદા મહેકાવજે.",
     couple: {
-      bride: {
-        name: "મનસ્વી",
-        fullName: "મનસ્વી અભય પારેખ",
-        parents: "અ. સૌ. અલ્પાબેન અને અભયભાઈ ચંદ્રકાંત પારેખની સુપુત્રી",
-        grandparents: "સ્વ. હસુમતીબેન અને ચંદ્રકાંત કેશવલાલ પારેખની સુપૌત્રી",
-        village: "ગામ માંફરા"
-      },
       groom: {
         name: "સૌમ્ય",
         fullName: "સૌમ્ય હંસરાજ શાહ",
         parents: "અ. સૌ. અમિતાબેન અને હંસરાજભાઈ નાનજી શાહના સુપુત્ર",
         grandparents: "સ્વ. અમરતબેન અને નાનજીભાઈ મણશી શાહના સુપૌત્ર",
         village: "ગામ આધોઈ"
-      }
+      },
+      bride: {
+        name: "મનસ્વી",
+        fullName: "મનસ્વી અભય પારેખ",
+        parents: "અ. સૌ. અલ્પાબેન અને અભયભાઈ ચંદ્રકાંત પારેખની સુપુત્રી",
+        grandparents: "સ્વ. હસુમતીબેન અને ચંદ્રકાંત કેશવલાલ પારેખની સુપૌત્રી",
+        village: "ગામ મોરબી"
+      },
+
     },
 
     eventDetails: {

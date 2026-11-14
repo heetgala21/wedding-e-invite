@@ -49,6 +49,17 @@
   const photoCarousel = document.getElementById('photoCarousel');
   const carouselDots = document.getElementById('carouselDots');
 
+  // Countdown Elements Cache
+  const cdDays = document.getElementById('cdDays');
+  const cdHours = document.getElementById('cdHours');
+  const cdMinutes = document.getElementById('cdMinutes');
+  const cdSeconds = document.getElementById('cdSeconds');
+  const cdDaysLabel = document.getElementById('cdDaysLabel');
+  const cdHoursLabel = document.getElementById('cdHoursLabel');
+  const cdMinutesLabel = document.getElementById('cdMinutesLabel');
+  const cdSecondsLabel = document.getElementById('cdSecondsLabel');
+  let countdownInterval = null;
+
   // 1.1 Theme Manager
   function applyTheme(themeName) {
     currentTheme = themeName;
@@ -56,6 +67,13 @@
     document.querySelectorAll('.theme-swatch').forEach(swatch => {
       swatch.classList.toggle('active', swatch.getAttribute('data-theme') === themeName);
     });
+  }
+
+  // 1.2 Asset URL Resolver (cache-busting support)
+  function resolveAsset(url) {
+    if (!url) return '';
+    const ver = (data.config && data.config.assetVersion) || '2.3';
+    return url.includes('?') ? url : `${url}?v=${ver}`;
   }
 
   // 2. Single Top-Right Language Switcher Renderer (Dynamic from data.config.languages)
@@ -87,6 +105,35 @@
     });
   }
 
+  // 2.1 Live Wedding Countdown Engine
+  function updateCountdown() {
+    const elDays = document.getElementById('cdDays');
+    const elHours = document.getElementById('cdHours');
+    const elMinutes = document.getElementById('cdMinutes');
+    const elSeconds = document.getElementById('cdSeconds');
+
+    const targetStr = (data.config && data.config.countdown && data.config.countdown.targetDate) || '2026-12-05T16:15:00+05:30';
+    const targetTime = new Date(targetStr).getTime();
+    const now = Date.now();
+    const diff = Math.max(0, targetTime - now);
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    if (elDays) elDays.textContent = String(days).padStart(2, '0');
+    if (elHours) elHours.textContent = String(hours).padStart(2, '0');
+    if (elMinutes) elMinutes.textContent = String(minutes).padStart(2, '0');
+    if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
+  }
+
+  function startCountdown() {
+    updateCountdown();
+    if (countdownInterval) clearInterval(countdownInterval);
+    countdownInterval = setInterval(updateCountdown, 1000);
+  }
+
 // 3. Render All Content from data.js
 function renderAll() {
   const langData = data[currentLang] || data.en;
@@ -101,9 +148,9 @@ function renderAll() {
   document.body.classList.remove('lang-en', 'lang-gu');
   document.body.classList.add(`lang-${currentLang}`);
 
-  // Gate Screen
-  gateLogo.src = cfg.logoImage;
-  gateCoupleNames.textContent = `${langData.couple.bride.name} & ${langData.couple.groom.name}`;
+  // Gate Screen (Groom & Bride)
+  gateLogo.src = resolveAsset(cfg.logoImage);
+  gateCoupleNames.textContent = `${langData.couple.groom.name} & ${langData.couple.bride.name}`;
   gateInviteType.textContent = langData.invitationType;
   gateEnterText.textContent = langData.tapToEnter;
 
@@ -120,16 +167,33 @@ function renderAll() {
     rsvpTextElem.textContent = langData.rsvpBtnText || 'RSVP';
   }
 
-  // CARD 1: Hero & Save the Date
+  // CARD 1: Hero & Save the Date (Groom & Bride)
   const invocationsBox = document.getElementById('heroInvocations');
   invocationsBox.innerHTML = langData.spiritualInvocations
     .map(line => `<div>${line}</div>`)
     .join('');
 
-  document.getElementById('heroLogo').src = cfg.logoImage;
-  document.getElementById('heroCoupleNames').textContent = `${langData.couple.bride.name} & ${langData.couple.groom.name}`;
+  document.getElementById('heroLogo').src = resolveAsset(cfg.logoImage);
+  document.getElementById('heroCoupleNames').textContent = `${langData.couple.groom.name} & ${langData.couple.bride.name}`;
   document.getElementById('heroDate').textContent = langData.eventDetails.date;
   document.getElementById('heroHinduDate').textContent = langData.eventDetails.hinduCalendarDate;
+
+  // Update Countdown Numbers and Labels dynamically from data.js
+  updateCountdown();
+  const elDaysLabel = document.getElementById('cdDaysLabel');
+  const elHoursLabel = document.getElementById('cdHoursLabel');
+  const elMinutesLabel = document.getElementById('cdMinutesLabel');
+  const elSecondsLabel = document.getElementById('cdSecondsLabel');
+  const cdLabels = langData.countdownLabels || {
+    days: 'Days',
+    hours: 'Hours',
+    minutes: 'Mins',
+    seconds: 'Secs'
+  };
+  if (elDaysLabel) elDaysLabel.textContent = cdLabels.days;
+  if (elHoursLabel) elHoursLabel.textContent = cdLabels.hours;
+  if (elMinutesLabel) elMinutesLabel.textContent = cdLabels.minutes;
+  if (elSecondsLabel) elSecondsLabel.textContent = cdLabels.seconds;
 
   const quoteBox = document.getElementById('heroQuote');
   if (langData.inspirationalQuote) {
@@ -140,16 +204,16 @@ function renderAll() {
   }
   document.getElementById('heroSwipeHint').textContent = langData.swipeUpHint;
 
-  // CARD 2: Couple Lineage
-  document.getElementById('brideName').textContent = langData.couple.bride.fullName;
-  document.getElementById('brideVillage').textContent = langData.couple.bride.village;
-  document.getElementById('brideParents').textContent = langData.couple.bride.parents;
-  document.getElementById('brideGrandparents').textContent = langData.couple.bride.grandparents;
-
+  // CARD 2: Couple Lineage (Groom first, then Bride)
   document.getElementById('groomName').textContent = langData.couple.groom.fullName;
   document.getElementById('groomVillage').textContent = langData.couple.groom.village;
   document.getElementById('groomParents').textContent = langData.couple.groom.parents;
   document.getElementById('groomGrandparents').textContent = langData.couple.groom.grandparents;
+
+  document.getElementById('brideName').textContent = langData.couple.bride.fullName;
+  document.getElementById('brideVillage').textContent = langData.couple.bride.village;
+  document.getElementById('brideParents').textContent = langData.couple.bride.parents;
+  document.getElementById('brideGrandparents').textContent = langData.couple.bride.grandparents;
 
   // CARD 3: Wedding Schedule
   document.getElementById('scheduleHeading').textContent = langData.eventDetails.scheduleTitle;
@@ -359,7 +423,7 @@ function setupPhotoCarousel() {
 
   photos.forEach((src, idx) => {
     const img = document.createElement('img');
-    img.src = src;
+    img.src = resolveAsset(src);
     img.alt = `Couple Photo ${idx + 1}`;
     img.className = `carousel-slide ${idx === 0 ? 'active' : ''}`;
     img.setAttribute('loading', 'eager');
@@ -529,6 +593,7 @@ function initEventListeners() {
 function init() {
   applyTheme(currentTheme);
   renderAll();
+  startCountdown();
   initAudio();
   createPetals();
   setupPhotoCarousel();

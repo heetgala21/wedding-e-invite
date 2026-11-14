@@ -114,7 +114,7 @@
   --font-gujarati-display: 'Shrikhand', 'Rasa', cursive, serif;
   --font-gujarati-poetry: 'Rasa', 'Noto Serif Gujarati', serif;
   --font-gujarati-serif: 'Noto Serif Gujarati', 'Rasa', serif;
-  --font-gujarati-ui: 'Anek Gujarati', 'Noto Serif Gujarati', sans-serif;
+  --font-gujarati-ui: 'Noto Serif Gujarati', 'Rasa', serif;
 
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.06);
   --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
@@ -355,11 +355,11 @@ body {
 
 .gate-type {
   font-size: 0.85rem;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-muted);
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .gate-enter-btn {
@@ -367,17 +367,17 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.85rem;
   border-radius: 50px;
   background: linear-gradient(135deg, var(--color-rosegold), var(--color-rosegold-dark));
   color: #fff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   border: none;
   box-shadow: 0 6px 18px var(--color-rosegold-glow);
   animation: pulseButton 2.2s infinite ease-in-out;
+  cursor: pointer;
 }
 
 @keyframes pulseButton {
@@ -519,10 +519,10 @@ body {
   background: transparent;
   color: var(--color-muted);
   font-family: inherit;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 5px 13px;
+  letter-spacing: 0.2px;
+  padding: 5px 12px;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -568,12 +568,12 @@ body {
   gap: 0.5rem;
   background: linear-gradient(135deg, #25D366, #128C7E);
   color: #fff;
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.15rem;
   border-radius: 50px;
   text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -734,16 +734,16 @@ body {
 
 .card-content {
   width: 100%;
-  max-width: 380px;
+  max-width: 390px;
   background: var(--color-white-glass);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--color-white-border);
   border-radius: 30px;
-  padding: 1.75rem 1.25rem;
+  padding: 1.5rem 1.2rem;
   box-shadow: var(--shadow-card);
-  max-height: 82vh;
-  max-height: 82dvh;
+  max-height: 86vh;
+  max-height: 86dvh;
   overflow-y: auto;
   opacity: 1;
   transform: none;
@@ -759,19 +759,19 @@ body {
 
 /* Card 1: Hero & Save the Date */
 .spiritual-mantra {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--color-rosegold);
-  letter-spacing: 1px;
-  margin-bottom: 1.25rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.9rem;
   line-height: 1.6;
 }
 
 .hero-logo-box {
   position: relative;
-  width: 105px;
-  height: 105px;
-  margin: 0 auto 0.75rem;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 0.6rem;
 }
 
 .hero-logo {
@@ -785,10 +785,10 @@ body {
 
 .couple-names {
   font-family: var(--font-cursive);
-  font-size: 3.6rem;
+  font-size: 3.4rem;
   line-height: 1.1;
   color: var(--color-rosegold);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .save-date-badge {
@@ -796,29 +796,77 @@ body {
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--color-rosegold-border);
   border-radius: 16px;
-  padding: 0.65rem 1.25rem;
-  margin-bottom: 1rem;
+  padding: 0.55rem 1.15rem;
+  margin-bottom: 0.65rem;
 }
 
 .gregorian-date {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--color-dark);
 }
 
 .hindu-tithi {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--color-rosegold);
   margin-top: 2px;
+}
+
+/* Live Wedding Countdown Timer */
+.countdown-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--color-rosegold-border);
+  border-radius: 18px;
+  padding: 0.45rem 0.85rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 14px var(--color-rosegold-light);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 38px;
+}
+
+.countdown-num {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-rosegold);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--color-muted);
+  margin-top: 1px;
+}
+
+.countdown-sep {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-rosegold-dark);
+  margin-top: -6px;
+  opacity: 0.65;
 }
 
 .quote-box {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 16px;
-  padding: 0.85rem 1rem;
-  font-size: 0.72rem;
+  padding: 0.7rem 0.95rem;
+  font-size: 0.78rem;
   line-height: 1.6;
   font-style: italic;
   color: var(--color-muted);
@@ -829,10 +877,10 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   color: var(--color-rosegold);
-  font-size: 0.68rem;
-  letter-spacing: 1.5px;
+  font-size: 0.72rem;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   font-weight: 600;
   opacity: 0.85;
@@ -867,33 +915,34 @@ body {
 }
 
 .person-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   font-style: italic;
   color: var(--color-rosegold);
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
 }
 
 .person-village {
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 700;
   color: var(--color-rosegold);
   margin-top: 2px;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .person-desc {
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--color-dark);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .person-subdesc {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--color-muted);
   margin-top: 3px;
+  line-height: 1.45;
 }
 
 /* Photo Carousel */
@@ -954,27 +1003,27 @@ body {
 
 /* Card 3: Wedding Schedule */
 .section-heading {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--color-rosegold);
-  padding-bottom: 0.6rem;
-  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.1rem;
   border-bottom: 1px solid var(--color-rosegold-border);
 }
 
 .timeline-list {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.95rem;
 }
 
 .timeline-item {
   display: flex;
   flex-direction: column;
   border-bottom: 1px dashed var(--color-rosegold-border);
-  padding-bottom: 0.9rem;
+  padding-bottom: 0.8rem;
   text-align: left;
 }
 
@@ -991,30 +1040,31 @@ body {
 }
 
 .timeline-event {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-dark);
 }
 
 .timeline-time {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--color-rosegold);
   white-space: nowrap;
 }
 
 .timeline-notes {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   color: var(--color-muted);
   font-style: italic;
-  margin-top: 4px;
+  margin-top: 3px;
+  line-height: 1.45;
 }
 
 /* Card 4: Darshanabhilashi (Welcoming Family) */
 .members-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 
 .member-pill {
@@ -1022,8 +1072,8 @@ body {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 12px;
-  padding: 0.6rem 0.75rem;
-  font-size: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-dark);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
@@ -1036,66 +1086,68 @@ body {
 .member-pill::before,
 .member-pill::after {
   content: '✦';
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   color: var(--color-rosegold);
 }
 
 /* Card 5: Mameru & Well-Wishers */
 .sub-section-title {
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--color-rosegold);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .divider-line {
   width: 45px;
   height: 1px;
   background: var(--color-rosegold-glow);
-  margin: 1rem auto;
+  margin: 0.7rem auto;
 }
 
 .names-cloud {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--color-muted);
   line-height: 1.7;
 }
 
 .mameru-village {
-  font-size: 0.75rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--color-rosegold);
+  margin-bottom: 0.2rem;
 }
 
 .mameru-grandparents {
-  font-size: 0.75rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--color-dark);
-  margin: 3px 0 0.6rem;
+  margin: 2px 0 0.5rem;
+  line-height: 1.45;
 }
 
 .uncles-list {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
 }
 
 .uncle-tag {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 10px;
-  padding: 0.4rem;
-  font-size: 0.72rem;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-dark);
 }
 
 .cousins-list {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--color-muted);
   line-height: 1.6;
 }
@@ -1110,33 +1162,33 @@ body {
 }
 
 .venue-name {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 0.35rem;
 }
 
 .venue-address {
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   color: var(--color-muted);
   line-height: 1.5;
   margin-bottom: 0.5rem;
 }
 
 .venue-phone {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--color-rosegold);
 }
 
 .map-wrapper {
   width: 100%;
-  height: 180px;
+  height: 175px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
   border: 3px solid rgba(255, 255, 255, 0.85);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .map-wrapper iframe {
@@ -1150,17 +1202,17 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.4rem;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--color-rosegold);
+  border: 1.5px solid var(--color-rosegold);
   color: var(--color-rosegold);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .direction-btn:hover,
@@ -1179,10 +1231,10 @@ body {
 }
 
 .closing-subtext {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-style: italic;
   color: var(--color-muted);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 /* ==========================================================================
@@ -1197,102 +1249,207 @@ body.lang-gu {
 body.lang-gu .gate-names,
 body.lang-gu .couple-names {
   font-family: var(--font-gujarati-display);
-  font-size: 2.75rem;
+  font-size: 2.6rem;
   font-weight: 400;
   letter-spacing: 0.5px;
-  line-height: 1.28;
+  line-height: 1.25;
   color: var(--color-rosegold);
   text-shadow: 0 3px 12px var(--color-rosegold-light);
 }
 
 body.lang-gu .gate-type {
   font-family: var(--font-gujarati-poetry);
-  font-size: 0.95rem;
-  letter-spacing: 2px;
+  font-size: 0.92rem;
+  letter-spacing: 1px;
   font-weight: 700;
+}
+
+body.lang-gu .gate-enter-btn {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: none;
 }
 
 body.lang-gu .spiritual-mantra {
   font-family: var(--font-gujarati-display);
-  font-size: 0.98rem;
-  letter-spacing: 1.2px;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--color-rosegold);
 }
 
 body.lang-gu .quote-box {
   font-family: var(--font-gujarati-poetry);
-  font-size: 0.88rem;
-  line-height: 1.85;
+  font-size: 0.86rem;
+  line-height: 1.75;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.2px;
 }
 
+body.lang-gu .swipe-hint {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.78rem;
+  letter-spacing: 0.2px;
+  text-transform: none;
+}
+
 body.lang-gu .section-heading {
   font-family: var(--font-gujarati-display);
-  font-size: 1.22rem;
-  letter-spacing: 1.5px;
+  font-size: 1.15rem;
+  letter-spacing: 0.8px;
   font-weight: 400;
 }
 
 body.lang-gu .sub-section-title {
   font-family: var(--font-gujarati-display);
-  font-size: 1.05rem;
-  letter-spacing: 1px;
+  font-size: 1.12rem;
+  letter-spacing: 0.5px;
   font-weight: 400;
 }
 
 body.lang-gu .person-title {
   font-family: var(--font-gujarati-display);
-  font-size: 1.35rem;
+  font-size: 1.32rem;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
 
 body.lang-gu .closing-script {
   font-family: var(--font-gujarati-display);
-  font-size: 2.25rem;
+  font-size: 2.2rem;
   line-height: 1.3;
   font-weight: 400;
 }
 
 body.lang-gu .gregorian-date {
   font-family: var(--font-gujarati-serif);
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   font-weight: 700;
 }
 
 body.lang-gu .hindu-tithi {
   font-family: var(--font-gujarati-poetry);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
 }
 
-body.lang-gu .timeline-event,
-body.lang-gu .venue-name,
+body.lang-gu .countdown-num {
+  font-family: var(--font-gujarati-serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+}
+
+body.lang-gu .countdown-label {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.68rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+body.lang-gu .timeline-event {
+  font-family: var(--font-gujarati-serif);
+  font-size: 1.0rem;
+  font-weight: 700;
+}
+
+body.lang-gu .timeline-time {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+body.lang-gu .timeline-notes {
+  font-family: var(--font-gujarati-poetry);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+body.lang-gu .person-village {
+  font-family: var(--font-gujarati-poetry);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 body.lang-gu .person-desc {
   font-family: var(--font-gujarati-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+body.lang-gu .person-subdesc {
+  font-family: var(--font-gujarati-poetry);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+body.lang-gu .mameru-village {
+  font-family: var(--font-gujarati-poetry);
+  font-size: 1.0rem;
+  font-weight: 700;
+}
+
+body.lang-gu .mameru-grandparents {
+  font-family: var(--font-gujarati-poetry);
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+body.lang-gu .names-cloud {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+body.lang-gu .uncle-tag {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.92rem;
   font-weight: 600;
 }
 
-body.lang-gu .timeline-notes,
-body.lang-gu .person-village,
-body.lang-gu .person-subdesc,
-body.lang-gu .closing-subtext,
-body.lang-gu .mameru-village,
-body.lang-gu .mameru-grandparents {
-  font-family: var(--font-gujarati-poetry);
+body.lang-gu .cousins-list {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.86rem;
+  line-height: 1.65;
 }
 
-body.lang-gu .gate-enter-btn,
+body.lang-gu .venue-name {
+  font-family: var(--font-gujarati-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+body.lang-gu .venue-address {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+body.lang-gu .venue-phone {
+  font-size: 0.92rem;
+}
+
+body.lang-gu .direction-btn {
+  font-family: var(--font-gujarati-serif);
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+body.lang-gu .closing-subtext {
+  font-family: var(--font-gujarati-poetry);
+  font-size: 0.88rem;
+}
+
 body.lang-gu .lang-option-btn,
-body.lang-gu .direction-btn,
 body.lang-gu .whatsapp-rsvp,
-body.lang-gu .member-pill,
-body.lang-gu .uncle-tag {
-  font-family: var(--font-gujarati-ui);
+body.lang-gu .member-pill {
+  font-family: var(--font-gujarati-serif);
+  letter-spacing: normal;
 }
 
 /* --- English Luxury European Calligraphy --- */
@@ -1303,7 +1460,7 @@ body.lang-en {
 body.lang-en .gate-names,
 body.lang-en .couple-names {
   font-family: var(--font-cursive);
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -1311,27 +1468,76 @@ body.lang-en .couple-names {
 
 body.lang-en .closing-script {
   font-family: var(--font-cursive);
-  font-size: 3.4rem;
+  font-size: 3.2rem;
   font-weight: 400;
 }
 
 body.lang-en .spiritual-mantra {
   font-family: var(--font-heading);
-  letter-spacing: 2px;
-  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  font-size: 0.82rem;
 }
 
 body.lang-en .section-heading,
 body.lang-en .sub-section-title {
   font-family: var(--font-heading);
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 body.lang-en .quote-box {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+body.lang-en .names-cloud,
+body.lang-en .cousins-list {
+  font-size: 0.82rem;
   line-height: 1.65;
+}
+
+body.lang-en .mameru-village {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+body.lang-en .mameru-grandparents {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+body.lang-en .uncle-tag {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+body.lang-en .member-pill {
+  font-size: 0.86rem;
+}
+
+body.lang-en .timeline-event {
+  font-size: 0.95rem;
+}
+
+body.lang-en .timeline-time {
+  font-size: 0.88rem;
+}
+
+body.lang-en .timeline-notes {
+  font-size: 0.78rem;
+}
+
+body.lang-en .person-desc {
+  font-size: 0.86rem;
+}
+
+body.lang-en .person-subdesc {
+  font-size: 0.82rem;
+}
+
+body.lang-en .venue-address {
+  font-size: 0.85rem;
 }
 
 /* 11. Responsive Adjustments */
