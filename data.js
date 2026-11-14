@@ -10,7 +10,7 @@ window.WEDDING_DATA = {
   config: {
     title: "Manasvi & Saumya Wedding Invitation",
     coupleInitials: "M & S",
-    logoImage: "assets/logo2.png",
+    logoImage: "assets/logo.png",
     photos: [
       "assets/couple1.jpeg",
       "assets/couple2.jpeg",
@@ -31,13 +31,13 @@ window.WEDDING_DATA = {
     },
     // WhatsApp RSVP details
     rsvp: {
-      whatsappNumber: "919699386166", // Format: country code + number (no '+' or spaces)
+      whatsappNumber: "919892925976", // Format: country code + number (no '+' or spaces)
       defaultMessage: "Hello! We will gladly be attending the wedding of Saumya & Manasvi!"
     },
     // Google Maps Navigation
     venueMap: {
       embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.392055762308!2d72.83680582487656!3d19.147186452496317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7005a8fb41f%3A0xf416abb0aaf0df4f!2sAurum%20baquet%20Nesco!5e0!3m2!1sen!2sin!4v1776059272027!5m2!1sen!2sin",
-      directMapUrl: "https://maps.app.goo.gl/AurumBanquetNesco"
+      directMapUrl: "https://maps.app.goo.gl/KzcM7KkaYPo5qbXn6"
     },
     defaultLanguage: "gu", // "gu" for Gujarati, "en" for English
     // Color Palette Theme:
@@ -67,8 +67,7 @@ window.WEDDING_DATA = {
 
     spiritualInvocations: [
       "|| Shree Ganeshaya Namah ||",
-      "|| Shree Serial Matay Namah ||",
-      "|| Shree Mahaviraya Namah ||"
+      "|| Shree Mahaviraya Namah ||",
     ],
 
     inspirationalQuote: "A daughter is like bringing the whole of spring home when only a green leaf was expected. A daughter is not just a blessing, but God found within a blessing...!",
@@ -76,28 +75,28 @@ window.WEDDING_DATA = {
     couple: {
       bride: {
         name: "Manasvi",
-        fullName: "Riya Nilesh Savla",
-        parents: "Daughter of Mrs. Meenaben & Mr. Nilesh Malshi Savla",
-        grandparents: "Granddaughter of Late Mrs. Panchiben & Mr. Malshi Arjan Savla",
+        fullName: "Manasvi Abhay Parekh",
+        parents: "Daughter of Mrs. Alpaben & Mr. Abhaybhai Chandrakant Parekh",
+        grandparents: "Granddaughter of Late Mrs. Hasumatiben & Mr. Chandrakant Keshavlal Parekh",
         village: "Village Manfara"
       },
       groom: {
         name: "Saumya",
         fullName: "Saumya Hansraj Shah",
-        parents: "Son of Mrs. Amitaben & Mr. Hansraj Nanji Shah",
-        grandparents: "Grandson of Late Mrs. Amratben & Mr. Nanji Shah",
+        parents: "Son of Mrs. Amitaben & Mr. Hansrajbhai Nanji Shah",
+        grandparents: "Grandson of Late Mrs. Amrutben & Mr. Nanjibhai Manshi Shah",
         village: "Village Adhoi"
       }
     },
 
     eventDetails: {
-      date: "Sunday, 10.05.2026",
-      hinduCalendarDate: "Samvat 2082, Vaishakh Vad 8",
+      date: "Saturday, 05.12.2026",
+      hinduCalendarDate: "Samvat 2083, Kartak Sud 12",
       scheduleTitle: "Wedding Itinerary",
       schedule: [
         {
           event: "Samaiyu (Welcoming of Baraat)",
-          time: "3:00 PM",
+          time: "2:15 PM",
           notes: "Arrival of Baraat & Welcoming"
         },
         {
@@ -107,15 +106,14 @@ window.WEDDING_DATA = {
         },
         {
           event: "Hast Melap / Wedding Ceremony",
-          time: "6:56 PM onwards",
+          time: "4:15 PM onwards",
           notes: "Auspicious wedding muhurat"
         }
       ],
       venueTitle: "Venue & Location",
       venue: {
-        name: "Aurum Banquet",
-        address: "NESCO Ground, Gate No. 1, Western Express Highway, Goregaon (East), Mumbai - 400063",
-        phone: "+91 97573 96440"
+        name: "CCDN Banquet Hall (Champaben Devshi Nandu Mahajan Wadi)",
+        address: "Andheri Link Rd, Near Lotus Petrol Pump, Andheri West, Mumbai - 400102"
       }
     },
 
@@ -123,52 +121,52 @@ window.WEDDING_DATA = {
       darshanabhilashi: {
         title: "Awaiting Your Gracious Presence",
         members: [
-          "Mrs. Meena Nilesh Malshi Savla",
-          "Mrs. Chandan Ketan Murji Furia",
-          "Mrs. Mona Damji Arjan Savla",
-          "Mrs. Meena Shantilal Vaghji Nishar",
-          "Mrs. Mukta Himmat Khetshi Shah",
-          "Mrs. Jinkal Milind Vadilal Gada"
+          "Mrs. Diwaliben Kuvarjibhai Shah",
+          "Mrs. Amitaben Hansrajbhai Shah",
+          "Mrs. Manjulaben Ramjibhai Nishar",
+          "Mrs. Diwaliben Jayantilal Chheda",
+          "Mrs. Premilaben Pravinbhai Satra",
+          "Mrs. Harshidaben Hasmukhbhai Shah",
+          "Mrs. Poojaben Sagarbhai Shah",
+          "Mrs. Kalpanaben Pravinbhai Gala",
         ]
       },
       wellWishers: {
         title: "Well-Wishers",
         members: [
-          "Ms. Harsha Malshi Savla",
-          "Ms. Khushi Nilesh Savla",
-          "Master Daksh Nilesh Savla",
-          "Master Daksh Damji Savla",
-          "Ms. Vishwa Ketan Furia",
-          "Master Pratik Ketan Furia"
+          "Master Akshat Hansraj Shah",
+          "Mrs. Nehaben Mayur Nishar",
+          "Mrs. Truptiben Ritesh Nishar",
+          "Mr. Bakulbhai Jayantilal Chheda",
+          "Mr. Birenbhai Jayantilal Chheda",
+          "Mr. Ankitbhai Pravin Satra",
+          "Mr. Sunnybhai Pravin Satra",
+          "Ms. Meenakshiben Ramji Nishar",
+          "Mrs. Bhavnaben Ashwin Chheda",
+          "Hiralben",
+          "Mrs. Dimpleben Rakesh Parekh",
+          "Dr. Bijalben Dr Nimesh Parmar",
         ]
       },
       mameru: {
         title: "Mameru (Maternal Family)",
-        village: "Village Samakhiyari",
-        grandparents: "Maternal Grandparents Mrs. Gomtiben and Late Mr. Premji Vijpar Gada",
+        village: "Village Aadhoi",
+        grandparents: "Maternal Grandparents Late Mrs. Kesarben and Late Mr. Damjibhai Chapsibhai Gala",
         unclesAndAunts: [
-          "Mrs. Hansaben & Mr. Jitu Premji Gada",
-          "Mrs. Arunaben & Mr. Dinesh Premji Gada",
-          "Mrs. Manishaben & Mr. Ketan Premji Gada"
+          "Mrs. Lataben & Mr. Manishbhai Damji Gala",
         ],
         cousins: [
-          "Mrs. Avani Sachin Sharma",
-          "Ms. Mansi Jitu Gada",
-          "Ms. Sakshi Jitu Gada",
-          "Ms. Jinni Ketan Gada",
-          "Master Aryan Ketan Gada",
-          "Master Jihan Ketan Gada"
+          "Master Heet Manish Gala",
+          "Master Punya Manish Gala"
         ]
       },
       divineBlessings: {
         title: "Divine Blessings (Divya Ashish)",
         members: [
-          "Late Bhavalben Arjan Jivraj Savla",
-          "Late Gangaben Arjan Jivraj Savla",
-          "Late Jayesh Malshi Savla",
-          "Late Laxmiben Keshavji Savla",
-          "Late Ratanben Madan Gada",
-          "Late Manuben Vijpar Gada"
+          "Late Puraben Manshibhai Shah",
+          "Late Amrutben Nanjibhai Shah",
+          "Late Kesarben Damjibhai Gala",
+          "Late Kuverjibhai Nanjibhai Shah",
         ]
       }
     }
@@ -186,8 +184,8 @@ window.WEDDING_DATA = {
 
     spiritualInvocations: [
       "॥ શ્રી ગણેશાય નમઃ ॥",
-      "।। શ્રી સીરીયલ માતાય નમઃ ।।",
-      "॥ શ્રી મહાવીરાય નમઃ ॥"
+      "॥ શ્રી ખેતરપાર દાદાને નમઃ ॥",
+      "॥ શ્રી સંચા માતાને નમઃ ॥",
     ],
 
     inspirationalQuote: "એક લીલા પાનની અપેક્ષા હોય, પરંતુ આખી વસંત ઘરે લાવે એ દીકરી, દીકરી એટલે માત્ર ઘર મા જ નહિ હોઠ, હૈયે અને શ્વાસમાં સતત વસેલી વસંત, દીકરી એટલે ખિસ્સામાં રાખેલું ચોમાસું દીકરી એટલે ઈશ્વર ના આશિર્વાદ નહિ દીકરી એટલે આશિર્વાદમાં મળેલા ઈશ્વર... !",
